@@ -13,7 +13,23 @@
 		100102491D94058400DEC9D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 100102471D94058400DEC9D0 /* Main.storyboard */; };
 		1001024B1D94058400DEC9D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1001024A1D94058400DEC9D0 /* Assets.xcassets */; };
 		1001024E1D94058400DEC9D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1001024C1D94058400DEC9D0 /* LaunchScreen.storyboard */; };
+		108C2F7E1D94115B000D7F20 /* fliclib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 108C2F7D1D94115B000D7F20 /* fliclib.framework */; };
+		108C2F7F1D94115B000D7F20 /* fliclib.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 108C2F7D1D94115B000D7F20 /* fliclib.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		100102601D940A7D00DEC9D0 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				108C2F7F1D94115B000D7F20 /* fliclib.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1001023B1D94058400DEC9D0 /* TigerFlic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TigerFlic.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -26,6 +42,7 @@
 		1001024A1D94058400DEC9D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1001024D1D94058400DEC9D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1001024F1D94058400DEC9D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		108C2F7D1D94115B000D7F20 /* fliclib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = fliclib.framework; path = "fliclib-ios-master/fliclib.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				108C2F7E1D94115B000D7F20 /* fliclib.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +60,7 @@
 		100102321D94058400DEC9D0 = {
 			isa = PBXGroup;
 			children = (
+				108C2F7D1D94115B000D7F20 /* fliclib.framework */,
 				1001023D1D94058400DEC9D0 /* TigerFlic */,
 				1001023C1D94058400DEC9D0 /* Products */,
 			);
@@ -89,6 +108,7 @@
 				100102371D94058400DEC9D0 /* Sources */,
 				100102381D94058400DEC9D0 /* Frameworks */,
 				100102391D94058400DEC9D0 /* Resources */,
+				100102601D940A7D00DEC9D0 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -110,6 +130,7 @@
 				TargetAttributes = {
 					1001023A1D94058400DEC9D0 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = Y8FLQEL77G;
 					};
 				};
 			};
@@ -263,10 +284,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/fliclib-ios-master",
+				);
 				INFOPLIST_FILE = TigerFlic/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = IR.TigerFlic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -274,10 +303,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/fliclib-ios-master",
+				);
 				INFOPLIST_FILE = TigerFlic/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = IR.TigerFlic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -300,6 +337,7 @@
 				100102541D94058400DEC9D0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

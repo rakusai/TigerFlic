@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <fliclib/fliclib.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

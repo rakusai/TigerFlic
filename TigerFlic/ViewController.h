@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <fliclib/fliclib.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<SCLFlicManagerDelegate, SCLFlicButtonDelegate>
 
 
 @end
