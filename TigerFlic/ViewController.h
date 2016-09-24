@@ -8,9 +8,19 @@
 
 #import <UIKit/UIKit.h>
 #import <fliclib/fliclib.h>
+#import <AVFoundation/AVFoundation.h>
+#import <QuartzCore/QuartzCore.h>
 
 @interface ViewController : UIViewController<SCLFlicManagerDelegate, SCLFlicButtonDelegate>
 
+@property NSUInteger count;
+@property CFTimeInterval startTime;
+@property NSMutableDictionary *sounds;
+@property NSMutableDictionary *counts;
+@property NSMutableDictionary *startTimes;
+
+- (void)loadSound:(NSString *) name;
+- (void)playSound:(NSString *) name;
 
 @end
 
